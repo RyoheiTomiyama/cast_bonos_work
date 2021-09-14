@@ -1,10 +1,17 @@
+<svelte:head>
+  <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+</svelte:head>
+
 <script>
 	export let name;
+
+	window?.cast?.framework?.CastReceiverContext?.getInstance()?.start();
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<cast-media-player></cast-media-player>
 </main>
 
 <style>
